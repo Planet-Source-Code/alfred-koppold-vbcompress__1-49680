@@ -1,0 +1,25 @@
+This class uses the compression-method from microsofts compress.exe and expand.exe.
+This compressed files are often with "_" on the end ("setup.tx_" ...) 
+The method is full compatible.
+You can compress with my app (class) and expand with expand.exe or compress with compress.exe and expand with my app.
+I include the api-version of expand. A compression is not in the api.
+I compress Win32api.txt from 652 kb to 196 kb.
+But: Sometimes the compressed file is bigger then the sourcefile!!!
+Test it. Some sort of files (txt...) are better to compress as other files (exe...) - they are really smaller. 
+A file from 11 MBytes took 30 seconds to compress on my old 500 MHz PC.
+
+To use my class is very simple:
+Dim a as new clsCompress
+
+a.Compress filename to sourcefilename, filename of the compressed file
+
+a.Expand sourcefilename, filename of the expanded file
+
+a.ExpandWithAPI sourcefilename, filename of the expanded file
+
+
+or you can do the same with:
+Dim a as new clsCompress
+a.Loadfilename = sourcefilename
+a.savefilename = filename of the compressed (expanded) file
+a.compress (or a. expand)
